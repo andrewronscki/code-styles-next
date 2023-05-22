@@ -1,3 +1,5 @@
+'use client';
+
 import { PersonCard } from "../organisms/PersonCard";
 
 export function ListPeople( ) {

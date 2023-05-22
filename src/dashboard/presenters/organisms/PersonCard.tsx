@@ -1,8 +1,10 @@
-import { Avatar } from "../atoms/Avatar";
-import { Button } from "../molecules/Button";
+'use client';
+
+import { Avatar } from "@/shared/presenters";
+import { Button } from "@/shared/presenters";
 
 import { RiArrowRightSLine } from 'react-icons/ri'
-import { CardDetail } from "../molecules/CardDetail";
+import { CardDetail } from "@/shared/presenters";;
 
 export function PersonCard( ) {
 	return (

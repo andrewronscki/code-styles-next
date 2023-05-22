@@ -1,7 +1,10 @@
-import { ReactNode } from "react";
+'use client';
 
-type Props = {
-	icon?: ReactNode;
+import { IconType } from "react-icons";
+import { Icon } from "@/shared/presenters";
+
+type ButtonProps = {
+	icon?: IconType;
 	text?: string;
 	color?: string;
 	backgroundColor?: string;
@@ -16,14 +19,15 @@ export function Button({
 	backgroundColor = 'bg-green-500', 
 	width = 'w-full', 
 	height = 'h-auto' 
-}: Props) {
-	const content = text ? text : icon;
+}: ButtonProps) {
+
 
 	return (
 		<button
 			className={`flex ${color} ${backgroundColor} ${width} ${height} rounded-xl p-2`}
 		>
-			{content}
+			{icon && <Icon icon={icon} color="#fff" />}
+			{text && text}
 		</button>
 	)
 }

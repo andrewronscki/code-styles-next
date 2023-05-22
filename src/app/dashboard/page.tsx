@@ -1,5 +1,7 @@
-import { Title } from "./atoms/Title";
-import { ListPeople } from "./template/ListPeople";
+'use client';
+
+import { Title } from "@/shared/presenters";
+import { ListPeople } from "@/dashboard/presenters";
 
 export default function Dashboard() {
   return (

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 
 type Props = {
@@ -10,7 +12,7 @@ type Props = {
 }
 
 export function Avatar({ url, width = 48, height = 48, alt, rounded = 'rounded-none', border = false }: Props) {
-	const avatarUrl = url ? url : `https://robohash.org/andre.png?size=${width}x${height}`;
+	const avatarUrl = url ? url : `https://robohash.org/avatar.png?size=${width}x${height}`;
 
 	const borderConfig = border ? `border-solid border-2 border-white` : '';
 	

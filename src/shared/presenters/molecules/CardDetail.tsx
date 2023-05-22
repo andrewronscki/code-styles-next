@@ -1,5 +1,7 @@
-import { Label } from "../atoms/Label";
-import { Text } from "../atoms/Text";
+'use client';
+
+import { Label } from "@/shared/presenters";;
+import { Text } from "@/shared/presenters";;
 
 type Props = {
 	label: string;
