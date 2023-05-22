@@ -1,9 +1,11 @@
 'use client';
 
+import { MouseEvent } from "react";
 import { IconType } from "react-icons";
 import { Icon } from "@/shared/presenters";
 
 type ButtonProps = {
+	onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 	icon?: IconType;
 	text?: string;
 	color?: string;

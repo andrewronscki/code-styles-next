@@ -1,2 +1,1 @@
-export * from "./organisms";
-export * from "./template";
+export * from "./components";
