@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import { FiChevronRight } from 'react-icons/fi';
 import { Avatar, Button, Information, Text } from "@/shared/presenters";
 
 
@@ -10,7 +10,6 @@ export function PersonCard() {
 	const [isLoading, setIsLoading] = useState(false);
 
 	function handleButton() {
-		console.log('caiu aqui')
 		setIsLoading(!isLoading);
 	}
 
@@ -27,8 +26,13 @@ export function PersonCard() {
 					<Information label="Points" text="5.000" />
 				</div>
 				<div className="flex justify-end items-end">
-					{isLoading ? <Text text='Carregando...' />: <Button width="" height="" icon={RiArrowRightSLine} onClick={handleButton} />}
-					
+					<Button 
+						icon={{ type: FiChevronRight, size: 32 }} 
+						onClick={handleButton} 
+						isLoading={isLoading}
+						width='w-12'
+						height='h-12'
+					/>	
 				</div>
 			</div>
 		</div>
