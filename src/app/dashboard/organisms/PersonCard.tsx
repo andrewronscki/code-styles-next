@@ -1,8 +1,4 @@
-import Image from "next/image";
-
 import { Avatar } from "../atoms/Avatar";
-import { Label } from "../atoms/Label";
-import { Text } from "../atoms/Text";
 import { Button } from "../molecules/Button";
 
 import { RiArrowRightSLine } from 'react-icons/ri'
@@ -10,7 +6,7 @@ import { CardDetail } from "../molecules/CardDetail";
 
 export function PersonCard( ) {
 	return (
-		<main className="flex flex-col bg-white w-56 h-64 rounded-xl p-4">
+		<div className="flex flex-col bg-white w-56 h-64 rounded-xl p-4">
 			<div className="flex justify-center items-center">
 				<Avatar alt="Imagem de perfil do usuario" height={86} width={86} border={true} rounded="rounded-full" />
 			</div>
@@ -25,7 +21,6 @@ export function PersonCard( ) {
 					<Button width="" height="" icon={RiArrowRightSLine} />
 				</div>
 			</div>
-
-		</main>
+		</div>
 	)
 }
