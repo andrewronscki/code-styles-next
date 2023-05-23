@@ -1,1 +1,1 @@
-export * from "./PersonCard";
+export * from "./ListPeople";

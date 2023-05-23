@@ -5,6 +5,8 @@ import { FiChevronRight } from 'react-icons/fi';
 import { Avatar, Button, Information, Text } from "@/shared/presenters";
 import { PersonEntity } from '@/dashboard/domain';
 
+
+// This iwould be a molecule
 export function PersonCard(person: PersonEntity) {
 	const [isLoading, setIsLoading] = useState(false);
 
