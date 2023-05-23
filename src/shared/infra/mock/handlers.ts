@@ -2,7 +2,7 @@ import { rest } from 'msw';
 import { PersonEntity } from '@/dashboard/domain';
 
 export const handlers = [
-  rest.get(`*/api/v1/people`, (_req, res, ctx) => {
+  rest.get(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/people`, (_req, res, ctx) => {
     return res(
       ctx.json<PersonEntity[]>([
 				{ id: 1, name: "Andre", role: "Tech Lead", points: 5000 },

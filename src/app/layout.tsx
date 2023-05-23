@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
-  require('../shared/infra/mock')
+  require('../shared/infra/mock');
 }
 
 export const metadata = {

@@ -1,14 +1,31 @@
+"use client";
+
 import { FindPeople } from "@/dashboard/data";
 
 import { PersonCard } from "../molecules/PersonCard";
-import { personRepositoryFactory } from "../../factories";
+import { AxiosHttpClient } from "@/shared";
+import { AxiosPersonRepository } from "@/dashboard/infra";
+import { useEffect, useState } from "react";
+import { PersonEntity } from "@/dashboard/domain";
 
-export async function ListPeople() {
-  const peopleFound = await new FindPeople(personRepositoryFactory()).execute();
+export function ListPeople() {
+	const [people, setPeople] = useState<PersonEntity[]>([]);
+
+	const httpClient = new AxiosHttpClient();
+	const personRepository = new AxiosPersonRepository(httpClient);
+	
+	useEffect(() => {
+		const findPeople = async () => {
+			const peopleFound = await new FindPeople(personRepository).execute();
+			setPeople(peopleFound);
+		}
+
+		findPeople();
+	}, [])
 
   return (
     <div className="flex flex-wrap w-320 gap-6">
-      {peopleFound.map((card) => (
+      {people.map((card) => (
         <PersonCard
           key={card.id}
           id={card.id}
