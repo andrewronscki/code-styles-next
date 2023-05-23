@@ -1,12 +1,21 @@
-'use client';
+import { FindPeople } from "@/dashboard/data";
 
 import { PersonCard } from "../organisms/PersonCard";
+import { personRepositoryFactory } from "../../factories";
 
-export function ListPeople( ) {
-	const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export async function ListPeople() {
+	const peopleFound = await new FindPeople(personRepositoryFactory()).execute();
 	return (
 		<div className="flex flex-wrap w-320 gap-6">
-			{list.map(card => (<PersonCard key={card} />))}
+			{peopleFound.map(card => (
+				<PersonCard 
+					key={card.id} 
+					id={card.id}
+					name={card.name}
+					role={card.role}
+					points={card.points}
+				/>
+			))}
 		</div>
 	)
 }

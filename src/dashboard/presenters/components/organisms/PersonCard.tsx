@@ -3,10 +3,9 @@
 import { useState } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { Avatar, Button, Information, Text } from "@/shared/presenters";
+import { PersonEntity } from '@/dashboard/domain';
 
-
-
-export function PersonCard() {
+export function PersonCard(person: PersonEntity) {
 	const [isLoading, setIsLoading] = useState(false);
 
 	function handleButton() {
@@ -21,9 +20,9 @@ export function PersonCard() {
 
 			<div className="flex justify-between w-full mt-2">
 				<div className="flex flex-col justify-start items-start w-full gap-2">
-					<Information label="Name" text="John Due" />
-					<Information label="Role" text="Development" />
-					<Information label="Points" text="5.000" />
+					<Information label="Name" text={person.name} />
+					<Information label="Role" text={person.role} />
+					<Information label="Points" text={`${person.points}`} />
 				</div>
 				<div className="flex justify-end items-end">
 					<Button 
