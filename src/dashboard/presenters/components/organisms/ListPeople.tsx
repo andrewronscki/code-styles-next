@@ -1,18 +1,15 @@
 "use client";
 
-import { FindPeople } from "@/dashboard/data";
-
-import { PersonCard } from "../molecules/PersonCard";
-import { AxiosHttpClient } from "@/shared";
-import { AxiosPersonRepository } from "@/dashboard/infra";
 import { useEffect, useState } from "react";
+
+import { FindPeople } from "@/dashboard/data";
 import { PersonEntity } from "@/dashboard/domain";
+import { PersonRepositoryFactory, PersonCard } from "@/dashboard/presenters";
 
 export function ListPeople() {
 	const [people, setPeople] = useState<PersonEntity[]>([]);
 
-	const httpClient = new AxiosHttpClient();
-	const personRepository = new AxiosPersonRepository(httpClient);
+	const personRepository = PersonRepositoryFactory();
 	
 	useEffect(() => {
 		const findPeople = async () => {
