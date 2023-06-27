@@ -16,7 +16,7 @@ export class AxiosHttpClient implements HttpClient {
 
     try {
       axiosResponse = await axios.request({
-        url: `${process.env.API_URL}/${data.url}`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}/${data.url}`,
         method: data.method,
         data: data.body,
         headers: data.headers

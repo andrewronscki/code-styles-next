@@ -1,6 +1,8 @@
 import { PersonEntity, PersonRepository } from "@/dashboard/domain";
 
 export class FakePersonRepository implements PersonRepository {
+	constructor() {}
+
 	async findAll(): Promise<PersonEntity[]> {
 		return [
 			{ id: 1, name: "Andre", role: "Tech Lead", points: 5000 },
@@ -13,6 +15,6 @@ export class FakePersonRepository implements PersonRepository {
 			{ id: 8, name: "Ciclano", role: "Development", points: 5000 },
 			{ id: 9, name: "Beltrano", role: "Development", points: 6000 },
 			{ id: 10, name: "Joao", role: "Development", points: 4000 },
-		];
+		]
 	}
 }
